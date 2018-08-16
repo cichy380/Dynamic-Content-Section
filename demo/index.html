@@ -15,6 +15,19 @@
     <!-- Custom styles for this template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/4.1/examples/blog/blog.css" rel="stylesheet">
+    <style>
+        .ajax-blogpost {opacity: .25; transition: opacity 1s; }
+        .ajax-ad {height: 100%; opacity: .5; transition: opacity 1s; }
+        .ajax-loading {min-height: 50px; background: #ddd; animation: animatedBackground 2s infinite; position: relative; }
+        .ajax-loading::after {content:'ajax loading...'; width: 100%; height: 100%; min-height: 50px; display: flex; align-items: center; justify-content: center; position: absolute; }
+        .ajax-done {opacity: 1; }
+        .ajax-error {}
+        @keyframes animatedBackground {
+            0% {background: #ddd; }
+            50% {background: #000;}
+            100% {background: #ddd;}
+        }
+    </style>
 </head>
 
 <body>
@@ -54,83 +67,29 @@
         </nav>
     </div>
 
-    <div class="jumbotron p-3 p-md-4 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
-            <h2 class="font-italic">Title of a featured news</h2>
-            <p class="my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-            <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
-        </div>
-    </div>
+    <div class="ajax-blogpost jumbotron p-0 rounded" data-ajax-data='{"location":"jumbotron","limit":1}' style="min-height: 196px; "></div>
 
-    <!--<div class="row">-->
-        <!--<div class="col-md-8">-->
-            <!--<section class="jumbotron p-md-4 text-white rounded bg-dark" style="min-height: 300px; background-image: url('https://picsum.photos/g/730/300?blur&amp;image=152')">-->
-                <!--<h1 class="font-italic">Title of a featured news post</h1>-->
-                <!--<p class="lead my-4">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents. Multiple lines of text that form the lede, informing new readers quickly.</p>-->
-                <!--<p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>-->
-            <!--</section>-->
-        <!--</div>-->
-        <!--<div class="col-md-4">-->
-            <!--<a href="#" style="height: 134px; background-image: url('https://picsum.photos/g/350/134?blur&amp;image=716'); margin-bottom: 32px; display: flex; align-items: center; text-align: center;">-->
-                <!--test-->
-            <!--</a>-->
-            <!--<img src="https://via.placeholder.com/350x134?text=banner" alt="" class="rounded mb-4" style="margin-bottom: 32px; ">-->
-            <!--<img src="https://via.placeholder.com/350x134?text=banner" alt="" class="rounded mb-4" >-->
-            <!--&lt;!&ndash;<img src="https://picsum.photos/g/350/134?blur&amp;image=126" alt="" class="rounded mb-4">&ndash;&gt;-->
-        <!--</div>-->
-    <!--</div>-->
-
-    <div class="row mb-2">
+    <div class="row mb-4">
         <div class="col-md-6">
-            <div class="card flex-md-row mb-4 box-shadow" style="height: 225px; ">
-                <div class="card-body d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-primary">World</strong>
-                    <h4 class="mb-0">
-                        <a class="text-dark" href="#">Featured post</a>
-                    </h4>
-                    <div class="mb-1 text-muted">Nov 12</div>
-                    <p class="card-text mb-auto">
-                        This is a wider card with supporting text below as a natural lead-in to additional content.
-                        <a href="#">Continue reading</a>
-                    </p>
-                </div>
-                <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x223?theme=thumb" alt="Card image cap">
-            </div>
+            <div class="ajax-blogpost rounded" data-ajax-data='{"location":"card","category":"World","limit":1}' style="height: 225px; "></div>
         </div>
         <div class="col-md-6">
-            <div class="card flex-md-row mb-4 box-shadow" style="height: 225px; ">
-                <div class="card-body d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-success">Design</strong>
-                    <h4 class="mb-0">
-                        <a class="text-dark" href="#">Post title</a>
-                    </h4>
-                    <div class="mb-1 text-muted">Nov 11</div>
-                    <p class="card-text mb-auto">
-                        This is a wider card with supporting text below as a natural lead-in to additional content.
-                        <a href="#">Continue reading</a>
-                    </p>
-                </div>
-                <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x223?theme=thumb" alt="Card image cap">
-            </div>
+            <div class="ajax-blogpost rounded" data-ajax-data='{"location":"card","category":"Design","limit":1}' style="height: 225px; "></div>
         </div>
     </div>
 
     <div class="row mb-2">
-        <div class="col-md-4">
-            <div class="p-3 mb-3 bg-light rounded">
+        <div class="col-md-4 mb-3">
+            <div class="p-3 bg-light rounded">
                 <h4 class="font-italic">About</h4>
                 <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia...</p>
             </div>
         </div>
-        <div class="col-md-4">
-            <figure>
-                <img class="d-lg-block img-fluid rounded" data-src="holder.js/350x140?theme=thumb" alt="">
-            </figure>
+        <div class="col-md-4 mb-3">
+            <figure class="ajax-ad rounded" data-ajax-data='{"size":"350x140","limit":1}' style="margin: 0;"></figure>
         </div>
-        <div class="col-md-4">
-            <figure>
-                <img class="d-lg-block img-fluid rounded" data-src="holder.js/350x140?theme=thumb" alt="">
-            </figure>
+        <div class="col-md-4 mb-3">
+            <figure class="ajax-ad rounded" data-ajax-data='{"size":"350x140","limit":1}' style="margin: 0;"></figure>
         </div>
     </div>
 </div>
@@ -166,9 +125,7 @@
 
             <div class="blog-post">
                 <h4 class="font-italic">Advertisement</h4>
-                <figure>
-                    <img class="d-lg-block img-fluid rounded" data-src="holder.js/730x80?theme=thumb" alt="">
-                </figure>
+                <figure class="ajax-ad" data-ajax-data='{"size":"leaderboard","limit":1}' data-ajax-url="/api/ads/123"></figure>
             </div>
 
             <div class="blog-post">
@@ -253,9 +210,7 @@
 
             <div class="p-3">
                 <h4 class="font-italic">Advertisement</h4>
-                <figure>
-                    <img class="d-lg-block img-fluid rounded" data-src="holder.js/350x140?theme=thumb" alt="">
-                </figure>
+                <figure class="ajax-ad" data-ajax-data='{"size":"medium rectangle","limit":1}'></figure>
             </div>
 
             <div class="p-3">
@@ -288,15 +243,35 @@
 
 <!-- JavaScript
 ================================================== -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdn.rawgit.com/imsky/holder/master/holder.js"></script>
+<script src="../dist/jquery.ajaxContent.min.js"></script>
 <script>
     Holder.addTheme('thumb', {
         bg: '#55595c',
         fg: '#eceeef',
         text: 'banner'
+    });
+</script>
+
+<!-- example code of plugin initialization
+================================================== -->
+<script>
+    jQuery('.ajax-ad').ajaxContent({
+        url: '/api/ads/',
+        callback: {
+            done: function () {
+              Holder.run({images: document.getElementsByTagName("IMG")});
+            }
+        },
+    });
+    jQuery('.ajax-blogpost').ajaxContent({
+      url: '/api/blog/posts/',
+      callback: {
+        done: function () {
+          Holder.run({images: document.getElementsByTagName("IMG")});
+        }
+      },
     });
 </script>
 </body>
