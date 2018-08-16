@@ -2,9 +2,9 @@
 
 A [jQuery](http://jquery.com/) plugin for easier creation of sections with dynamic content loaded using AJAX technology.
 
-## Demos
+## Demo
 
-http://example.silversite.pl/dcb/
+http://example.silversite.pl/dcb/demo/
 
 ## Installation
 
@@ -12,10 +12,10 @@ Include the minified file in your project.
 
 ```html
 <script src="jquery.js"></script>
-<script type="text/javascript" src="jquery.dynamicContentSection.min.js"></script>
+<script type="text/javascript" src="jquery.ajaxContent.min.js"></script>
 ```
 
-## Usage
+## Example of usage
 
 HTML code:
 ```html
@@ -32,6 +32,19 @@ $(function() {
     });
 });
 ```
+
+### AJAX response format expected
+
+Plugin expected response in JSON format based on [JSON API Specification v1.0](http://jsonapi.org/format/) with required 
+`data` and `html` keys.
+
+JSON code:
+```js
+data: [{
+  html: '<html-code-here/>'
+}]
+```
+
 
 ## Development
 
