@@ -1,0 +1,27 @@
+{
+  "name": "dynamic-content-section",
+  "description": "",
+  "keywords": [
+    "jquery",
+    "ajax"
+  ],
+
+  "author": "Marcin Dobroszek <marcin.dobroszek@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cichy380/Dynamic-Content-Section.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "git://github.com/cichy380/Dynamic-Content-Section/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack --config webpack.config.js",
+    "build": "webpack -p",
+    "watch": "webpack --watch"
+  },
+  "devDependencies": {
+    "webpack": "3"
+  }
+}
