@@ -4,7 +4,7 @@ A [jQuery](http://jquery.com/) plugin for easier creation of sections with dynam
 
 ## Demo
 
-http://example.silversite.pl/dcb/demo/
+http://example.silversite.pl/dcb/demo/ (disable [Adblock](https://getadblock.com/) in your browser if you use)
 
 ## Installation
 
@@ -40,9 +40,7 @@ Plugin expected response in JSON format based on [JSON API Specification v1.0](h
 
 JSON code:
 ```js
-data: [{
-  html: '<html-code-here/>'
-}]
+{"data":[{"html":"<html-code-here/>"}]}
 ```
 
 

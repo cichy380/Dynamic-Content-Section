@@ -4,7 +4,8 @@
  * Content loaded by AJAX
  * jQuery plugin based on https://addyosmani.com/resources/essentialjsdesignpatterns/book/#jquerypluginpatterns
  *
- * @todo: AJAX triggered manually
+ * @todo: 1. AJAX triggered manually
+ * @todo: 2. expecting multi items in response
  */
 ;(function ($, window, document, undefined) {
   var pluginName = 'ajaxContent',
@@ -50,7 +51,7 @@
     $.ajax(ajaxConfig)
       .done(function (response) {
         $element.addClass('ajax-done');
-        $element.html(response.data[0].html);
+        $element.html(response.data[0].html); // foreach here (todo #2)
         options.callback.done();
         $(document.body).trigger('content-loaded');
       })
