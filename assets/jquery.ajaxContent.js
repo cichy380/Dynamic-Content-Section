@@ -3,6 +3,8 @@
  *
  * Content loaded by AJAX
  * jQuery plugin based on https://addyosmani.com/resources/essentialjsdesignpatterns/book/#jquerypluginpatterns
+ *
+ * @todo: AJAX triggered manually
  */
 ;(function ($, window, document, undefined) {
   var pluginName = 'ajaxContent',
@@ -26,23 +28,8 @@
   }
 
   Plugin.prototype.init = function () {
-    var pluginName = this._name,
-      pluginOption = this.options,
-      $element = $(this.element),
-      ajax = this.ajax,
-      ajaxTrigger;
-
     try {
-      ajaxTrigger = $element.prefixData('ajax').trigger;
-
-      if (ajaxTrigger === 'manual') {
-        $element.one('start.ajax', function (event) {
-          ajax($(event.currentTarget), pluginOption, pluginName);
-        });
-      }
-      else {
-        this.ajax($element);
-      }
+      this.ajax($(this.element));
     }
     catch (err) {
       warningLog(err);
@@ -70,7 +57,7 @@
       .fail(function (jqXHR, textStatus, errorThrown) {
         options.callback.fail();
         $element.addClass('ajax-error');
-        warningLog('ERROR of .' + pluginName + '() plugin: Deferred object is rejected. AJAX config:');
+        warningLog('ERROR of .' + pluginName + '() plugin: Deferred object is rejected.');
         warningLog(errorThrown);
       })
       .always(function () {
