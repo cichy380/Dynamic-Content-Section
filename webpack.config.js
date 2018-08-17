@@ -2,9 +2,8 @@ const path = require('path');
 
 module.exports = {
   entry: [
+    './node_modules/prefix-data/jquery.prefixData.js',
     './assets/jquery.ajaxContent.js',
-    './assets/jquery.prefixData.js',
-    './assets/jquery.getAttributes.js',
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),

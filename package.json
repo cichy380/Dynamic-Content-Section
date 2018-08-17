@@ -20,6 +20,9 @@
     "build": "webpack -p",
     "watch": "webpack --watch"
   },
+  "dependencies": {
+    "prefix-data": "git+https://github.com/cichy380/prefixData.git"
+  },
   "devDependencies": {
     "webpack": "3"
   }
