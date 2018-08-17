@@ -1,19 +1,18 @@
 {
   "name": "dynamic-content-section",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [
-    "jquery",
-    "ajax"
-  ],
+  "description": "The easier way to dynamic AJAX content in a multi section on your website.",
+  "keywords": ["jquery", "ajax"],
+  "homepage": "https://github.com/cichy380/Dynamic-Content-Section#readme",
+  "bugs": {
+    "url": "https://github.com/cichy380/Dynamic-Content-Section/issues",
+    "email" : "marcin.dobroszek@gmail.com"
+  },
+  "license": "MIT",
   "author": "Marcin Dobroszek <marcin.dobroszek@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/cichy380/Dynamic-Content-Section.git"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "git://github.com/cichy380/Dynamic-Content-Section/issues"
   },
   "main": "dist/jquery.ajaxContent.min.js",
   "scripts": {
